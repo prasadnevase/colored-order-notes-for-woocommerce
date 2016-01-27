@@ -6,7 +6,7 @@
  * Version:         1.0
  * Author:          Prasad Nevase
  * Author URI:      https://about.me/prasad.nevase
- * Text Domain:     woocommerce-colored-order-notes
+ * Text Domain:     colored-order-notes-for-woocommerce
  * License:         GPLv3
  */
 
@@ -44,7 +44,7 @@ class WC_Settings_Order_Note_Colors {
         }
 
         public static function wc_onc_admin_notices() {
-            echo '<div class="error"><p>' . __( '<strong>WooCommerce Order Note Colors</strong> plugin requires WooCommerce version 2.5.0 or higher. Please take necessary backup, update WooCommerce then deactivate & activate this plugin.', 'woocommerce-colored-order-notes' ) . '</p></div>';
+            echo '<div class="error"><p>' . __( '<strong>WooCommerce Order Note Colors</strong> plugin requires WooCommerce version 2.5.0 or higher. Please take necessary backup, update WooCommerce then deactivate & activate this plugin.', 'colored-order-notes-for-woocommerce' ) . '</p></div>';
         }
         
         /**
@@ -54,7 +54,7 @@ class WC_Settings_Order_Note_Colors {
          * @return array $settings_tabs Array of WooCommerce setting tabs & their labels, including the Subscription tab.
          */
         public static function wc_onc_add_settings_tab( $settings_tabs ) {
-            $settings_tabs['order_note_color'] = __( 'Order Note Colors', 'woocommerce-colored-order-notes' );
+            $settings_tabs['order_note_color'] = __( 'Order Note Colors', 'colored-order-notes-for-woocommerce' );
             return $settings_tabs;
         }
      
@@ -90,7 +90,7 @@ class WC_Settings_Order_Note_Colors {
             $wc_onc_order_statuses = wc_get_order_statuses();
 
             $wc_onc_settings[] = array(
-                    'name'     => __( 'Order Note Colors', 'woocommerce-colored-order-notes' ),
+                    'name'     => __( 'Order Note Colors', 'colored-order-notes-for-woocommerce' ),
                     'type'     => 'title',
                     'desc'     => 'Here you can specify the bacground color for order note based on order status',
                     'id'       => 'wc_settings_order_note_colors'
@@ -104,7 +104,7 @@ class WC_Settings_Order_Note_Colors {
                 $wc_onc_order_status_id = strtolower ( "onc_" . str_replace( ' ', '_', $wc_onc_order_status ));
 
                 $wc_onc_settings[] =  array(
-                    'name' => __( $wc_onc_order_status, 'woocommerce-colored-order-notes' ),
+                    'name' => __( $wc_onc_order_status, 'colored-order-notes-for-woocommerce' ),
                     'type' => 'color',
                     'id'   => $wc_onc_order_status_id
                     );
