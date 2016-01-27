@@ -43,6 +43,11 @@ class WC_Settings_Order_Note_Colors {
             add_action( 'admin_head', __CLASS__ . '::wc_onc_css' );
         }
 
+
+        /**
+         * Shows admin notice if WooCommerce version is below 2.5
+         *
+         */
         public static function wc_onc_admin_notices() {
             echo '<div class="error"><p>' . __( '<strong>WooCommerce Order Note Colors</strong> plugin requires WooCommerce version 2.5.0 or higher. Please take necessary backup, update WooCommerce then deactivate & activate this plugin.', 'colored-order-notes-for-woocommerce' ) . '</p></div>';
         }

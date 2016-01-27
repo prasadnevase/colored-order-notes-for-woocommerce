@@ -31,6 +31,9 @@ WooCommerce Colored Order Notes plugin allows you to to customize order note col
 ### What if I do not set any colors under `WooCommerce > Settings > Order Note Colors` tab? ###
 Then WooCommerce default order note color will be used.
 
+### Will this plugin work for custom order status too? ###
+Yep!
+
 ### Why it does not work for versions below WooCommerce 2.5 ###
 WooCommerce has introduced a filter for order note classes in 2.5 So the plugin would work for WooCommerce 2.5 and above.
 
