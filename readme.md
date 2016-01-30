@@ -47,7 +47,7 @@ Sorry about that! Please open a [Github Issue](https://github.com/ItsMePN/colore
 ## Screenshots ##
 
 ###1. WooCommerce Colored Order Notes - Settings Page.###
-[missing image]
+![WooCommerce Colored Order Notes - Settings Page](https://github.com/ItsMePN/colored-order-notes-for-woocommerce/blob/master/assets/screenshot-1.png)
 
 
 ## Changelog ##
