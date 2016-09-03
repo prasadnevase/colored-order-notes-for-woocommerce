@@ -2,7 +2,7 @@
 **Contributors:** prasad-nevase  
 **Tags:** woocommerce custom order note color, order note color, colored order note, coloured order notes, woocommerce coloured order notes  
 **Requires at least:** 4.4  
-**Tested up to:** 4.4.1  
+**Tested up to:** 4.6  
 **Stable tag:** 1.0  
 **License:** GPLv3  
 **License URI:** http://www.gnu.org/licenses/gpl-3.0.html  
