@@ -1,5 +1,5 @@
 === WooComerce Colored Order Notes ===
-Contributors: prasad-nevase
+Contributors: prasad-nevase, chandrapatel
 Tags: woocommerce custom order note color, order note color, colored order note, coloured order notes, woocommerce coloured order notes
 Requires at least: WordPress 4.4 or above
 Tested up to: 4.6
