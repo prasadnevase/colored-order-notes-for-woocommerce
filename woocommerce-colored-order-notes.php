@@ -139,7 +139,7 @@ if ( ! class_exists( 'WC_Settings_Order_Note_Colors' ) ) {
 
 			foreach ( $onc_css_classes as $onc_css_class ) {
 
-				if ( 'color' === $onc_css_class['type'] && rtrim( $per_note_status[1], '.' ) === $onc_css_class['name'] ) {
+				if ( 'color' === $onc_css_class['type'] && strtolower( rtrim( $per_note_status[ count( $per_note_status ) - 1 ], '.' ) ) === strtolower( $onc_css_class['name'] ) ) {
 
 					$note_classes[] = $onc_css_class['id'];
 				}
@@ -173,9 +173,9 @@ if ( ! class_exists( 'WC_Settings_Order_Note_Colors' ) ) {
 
 							$text_color = hexdec( $note_color ) > 0xffffff/2 ? 'black' : 'white';
 
-							$onc_css .= '.note.' . $onc_note_color['id'] . ' .note_content { background: ' . get_option( $onc_note_color['id'] ) . '; color: ' . $text_color . '; }';
+							$onc_css .= '.note.' . $onc_note_color['id'] . ' .note_content { background: ' . get_option( $onc_note_color['id'] ) . ' !important; color: ' . $text_color . '; }';
 
-							$onc_css .= ' .note.' . $onc_note_color['id'] . ' .note_content:after { border-color: ' . get_option( $onc_note_color['id'] ) . ' transparent;}';
+							$onc_css .= ' .note.' . $onc_note_color['id'] . ' .note_content:after { border-color: ' . get_option( $onc_note_color['id'] ) . ' transparent !important; }';
 						}
 					}
 				}
