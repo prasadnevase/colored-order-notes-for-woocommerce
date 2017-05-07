@@ -1,5 +1,12 @@
 <?php
 /**
+ * WooCommerce Colored Order Notes
+ *
+ * @package     WooCommerceColoredOrderNotes
+ * @author      Prasad Nevase
+ * @copyright   2016 Your Name or Company Name
+ * @license     GPLv3
+ *
  * Plugin Name:     WooCommerce Colored Order Notes
  * Plugin URI:      https://wordpress.org/plugins/woocommerce-colored-order-notes/
  * Description:     Assign custom colors to WooCommerce order notes from backend.
@@ -21,6 +28,9 @@ if ( ! class_exists( 'WC_Settings_Order_Note_Colors' ) ) {
 	 */
 	class WC_Settings_Order_Note_Colors {
 
+		/**
+		 *  Class Constructor
+		 */
 		function __construct() {
 
 	   		add_action( 'init', array( $this, 'init' ) );
@@ -103,7 +113,6 @@ if ( ! class_exists( 'WC_Settings_Order_Note_Colors' ) ) {
 					'id'       => 'wc_settings_order_note_colors',
 				);
 
-
 			/* This loop will provide color setting option for all default + custom order status */
 
 			foreach ( $wc_onc_order_statuses as $wc_onc_order_status ) {
@@ -129,9 +138,10 @@ if ( ! class_exists( 'WC_Settings_Order_Note_Colors' ) ) {
 		/**
 		 * Append css class to $note_classes array based on the order status.
 		 *
-		 * @return array Array of note classes.
+		 * @param Array  $note_classes Array of note css classes.
+		 * @param Object $note Object which holds all parameter for a note.
+		 * @return Array $note_classes Array of note css classes.
 		 */
-
 		public static function wc_onc_process_note_classes( $note_classes, $note ) {
 
 			$per_note_status = explode( 'to ', $note->comment_content );
@@ -171,7 +181,7 @@ if ( ! class_exists( 'WC_Settings_Order_Note_Colors' ) ) {
 
 						if ( ! empty( $note_color ) ) {
 
-							$text_color = hexdec( $note_color ) > 0xffffff/2 ? 'black' : 'white';
+							$text_color = hexdec( $note_color ) > 0xffffff / 2 ? 'black' : 'white';
 
 							$onc_css .= '.note.' . $onc_note_color['id'] . ' .note_content { background: ' . get_option( $onc_note_color['id'] ) . ' !important; color: ' . $text_color . '; }';
 
@@ -186,7 +196,7 @@ if ( ! class_exists( 'WC_Settings_Order_Note_Colors' ) ) {
 			}
 		}
 	}
-}
+} // End if().
 
 if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ), true ) ) {
 
