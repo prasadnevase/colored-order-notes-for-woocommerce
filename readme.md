@@ -2,8 +2,8 @@
 **Contributors:** prasad-nevase  
 **Tags:** woocommerce custom order note color, order note color, colored order note, coloured order notes, woocommerce coloured order notes  
 **Requires at least:** WordPress 4.4 or above  
-**Tested up to:** 4.6  
-**Stable tag:** 1.0  
+**Tested up to:** 4.7.4  
+**Stable tag:** 1.0.1  
 **License:** GPLv3  
 **License URI:** http://www.gnu.org/licenses/gpl-3.0.html  
 
@@ -13,6 +13,8 @@ This plugin allows you to customize order note color for each order status.
 
 WooCommerce Colored Order Notes plugin allows you to to customize order note color for each order status. The plugin is made to work with WooCommerce version 2.5 or higher. Upon activating the plugin you will see "Order Note Colors" tab under "WooCommerce > Settings".
 
+**Note**
+This plugin works only with English (en_US) locale currently.
 
 **Important Links**
 
@@ -52,5 +54,7 @@ Sorry about that! Please open a [Github Issue](https://github.com/ItsMePN/colore
 
 ## Changelog ##
 
-### 1.0 ###
-* First Public Release - 30th Jan 2016
+### 1.0 - 30th Jan 2016 ###
+* First Public Release
+### 1.0.1 - 3rd May 2017 ###
+* Updated the code to work with WordPress 4.7.4 and WooCommerce 3.0.5
