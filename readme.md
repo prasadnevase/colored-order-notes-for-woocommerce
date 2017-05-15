@@ -22,7 +22,7 @@ This plugin works only with English (en_US) locale currently.
 
 ## Installation ##
 
-* Install the plugin from the 'Plugins' section in your dashboard (Go to `Plugins > Add New > Search` and search for 'WooComerce Colored Order Notes').
+* Install the plugin from the 'Plugins' section in your dashboard (Go to `Plugins > Add New > Search` and search for 'WooCommerce Colored Order Notes').
 * Alternatively, you can [download](http://downloads.wordpress.org/plugin/colored-order-notes-for-woocommerce.zip "Download WooCommerce Colored Order Notes") the plugin from the repository. Unzip it and upload it to the plugins folder of your WordPress installation (`wp-content/plugins/` directory of your WordPress installation).
 * Activate it through the 'Plugins' section.
 * Access the settings page from WordPress backend under `WooCommerce > Settings`.
@@ -54,7 +54,8 @@ Sorry about that! Please open a [Github Issue](https://github.com/ItsMePN/colore
 
 ## Changelog ##
 
-### 1.0 - 30th Jan 2016 ###
-* First Public Release
-### 1.0.1 - 3rd May 2017 ###
+### 1.0.1 - 2017-05-03 ###
 * Updated the code to work with WordPress 4.7.4 and WooCommerce 3.0.5
+
+### 1.0 - 2016-01-30 ###
+* First Public Release

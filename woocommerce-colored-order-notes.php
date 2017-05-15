@@ -10,7 +10,7 @@
  * Plugin Name:     WooCommerce Colored Order Notes
  * Plugin URI:      https://wordpress.org/plugins/woocommerce-colored-order-notes/
  * Description:     Assign custom colors to WooCommerce order notes from backend.
- * Version:         1.0
+ * Version:         1.0.1
  * Author:          Prasad Nevase
  * Author URI:      https://about.me/prasad.nevase
  * Text Domain:     colored-order-notes-for-woocommerce

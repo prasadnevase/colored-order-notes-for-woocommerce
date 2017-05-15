@@ -52,5 +52,8 @@ Sorry about that! Please open a [Github Issue](https://github.com/ItsMePN/colore
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.1 - 2017-05-03 =
+* Updated the code to work with WordPress 4.7.4 and WooCommerce 3.0.5
+
+= 1.0 - 2016-01-30 =
 * First Public Release - 30th Jan 2016
