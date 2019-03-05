@@ -31,9 +31,9 @@ if ( ! class_exists( 'WC_Settings_Order_Note_Colors' ) ) {
 		/**
 		 *  Class Constructor
 		 */
-		function __construct() {
+		public function __construct() {
 
-	   		add_action( 'init', array( $this, 'init' ) );
+			add_action( 'init', array( $this, 'init' ) );
 
 		}
 
@@ -71,7 +71,7 @@ if ( ! class_exists( 'WC_Settings_Order_Note_Colors' ) ) {
 		 * @return array $settings_tabs Array of WooCommerce setting tabs & their labels, including the Subscription tab.
 		 */
 		public static function wc_onc_add_settings_tab( $settings_tabs ) {
-			$settings_tabs['order_note_color'] = __( 'Order Note Colors', 'colored-order-notes-for-woocommerce' );
+			$settings_tabs['order_note_color'] = esc_html__( 'Order Note Colors', 'colored-order-notes-for-woocommerce' );
 			return $settings_tabs;
 		}
 
@@ -103,18 +103,17 @@ if ( ! class_exists( 'WC_Settings_Order_Note_Colors' ) ) {
 		 */
 		public static function wc_onc_get_settings() {
 
-			$wc_onc_settings = array();
+			$wc_onc_settings       = array();
 			$wc_onc_order_statuses = wc_get_order_statuses();
 
 			$wc_onc_settings[] = array(
-					'name'     => __( 'Order Note Colors', 'colored-order-notes-for-woocommerce' ),
-					'type'     => 'title',
-					'desc'     => 'Here you can specify the bacground color for order note based on order status',
-					'id'       => 'wc_settings_order_note_colors',
-				);
+				'name' => esc_html__( 'Order Note Colors', 'colored-order-notes-for-woocommerce' ),
+				'type' => 'title',
+				'desc' => esc_html__( 'Here you can specify the bacground color for order note based on order status.', 'colored-order-notes-for-woocommerce' ),
+				'id'   => 'wc_settings_order_note_colors',
+			);
 
 			/* This loop will provide color setting option for all default + custom order status */
-
 			foreach ( $wc_onc_order_statuses as $wc_onc_order_status ) {
 
 				$wc_onc_order_status_id = strtolower( 'onc_' . str_replace( ' ', '_', $wc_onc_order_status ) );
@@ -129,7 +128,7 @@ if ( ! class_exists( 'WC_Settings_Order_Note_Colors' ) ) {
 
 			$wc_onc_settings[] = array(
 				'type' => 'sectionend',
-				'id' => 'wc_settings_order_note_colors_end',
+				'id'   => 'wc_settings_order_note_colors_end',
 			);
 
 			return apply_filters( 'wc_settings_tab_order_note_color_settings', $wc_onc_settings );
@@ -144,7 +143,18 @@ if ( ! class_exists( 'WC_Settings_Order_Note_Colors' ) ) {
 		 */
 		public static function wc_onc_process_note_classes( $note_classes, $note ) {
 
-			$per_note_status = explode( 'to ', $note->comment_content );
+			if ( ! empty( $note->content ) ) { // For WC >= 3.2.0 version.
+
+				$per_note_status = explode( 'to ', $note->content );
+
+			} elseif ( ! empty( $note->comment_content ) ) { // For WC <= 2.7.0 version.
+
+				$per_note_status = explode( 'to ', $note->comment_content );
+
+			} else {
+				return $note_classes;
+			}
+
 			$onc_css_classes = self::wc_onc_get_settings();
 
 			foreach ( $onc_css_classes as $onc_css_class ) {
@@ -196,12 +206,12 @@ if ( ! class_exists( 'WC_Settings_Order_Note_Colors' ) ) {
 			}
 		}
 	}
-} // End if().
+}
 
 if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ), true ) ) {
 
 	global $wc_onc;
 
-	$wc_onc = new WC_Settings_Order_Note_Colors;
+	$wc_onc = new WC_Settings_Order_Note_Colors();
 
 }
