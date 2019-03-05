@@ -2,8 +2,8 @@
 Contributors: prasad-nevase, chandrapatel
 Tags: woocommerce custom order note color, order note color, colored order note, coloured order notes, woocommerce coloured order notes
 Requires at least: WordPress 4.4 or above
-Tested up to: 4.7.0
-Stable tag: 1.0.1
+Tested up to: 5.1
+Stable tag: 1.0.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -51,6 +51,9 @@ Sorry about that! Please open a [Github Issue](https://github.com/ItsMePN/colore
 1. WooCommerce Colored Order Notes - Settings Page.
 
 == Changelog ==
+
+= 1.0.2 - 2019-03-06 =
+* Compatible with WordPress 5.1 and WooCommerce 3.5.5
 
 = 1.0.1 - 2017-05-03 =
 * Updated the code to work with WordPress 4.7.4 and WooCommerce 3.0.5
