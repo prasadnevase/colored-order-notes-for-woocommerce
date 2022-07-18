@@ -191,11 +191,11 @@ if ( ! class_exists( 'WC_Settings_Order_Note_Colors' ) ) {
 
 						if ( ! empty( $note_color ) ) {
 
-							$text_color = hexdec( $note_color ) > 0xffffff / 2 ? 'black' : 'white';
+							$text_color = hexdec( ltrim( $note_color, '#' ) ) > 0xffffff / 2 ? 'black' : 'white';
 
-							$onc_css .= '.note.' . $onc_note_color['id'] . ' .note_content { background: ' . get_option( $onc_note_color['id'] ) . ' !important; color: ' . $text_color . '; }';
+							$onc_css .= '.note.' . $onc_note_color['id'] . ' .note_content { background: ' . $note_color . ' !important; color: ' . $text_color . '; }';
 
-							$onc_css .= ' .note.' . $onc_note_color['id'] . ' .note_content:after { border-color: ' . get_option( $onc_note_color['id'] ) . ' transparent !important; }';
+							$onc_css .= ' .note.' . $onc_note_color['id'] . ' .note_content:after { border-color: ' . $note_color . ' transparent !important; }';
 						}
 					}
 				}
